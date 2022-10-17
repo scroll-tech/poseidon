@@ -6,7 +6,7 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-halo2curves = { git = 'https://github.com/privacy-scaling-explorations/halo2curves', tag = 'v0.2.0' }
+halo2curves = { git = 'https://github.com/scroll-tech/halo2curves', branch = "sync-halo2-ecc-1013" }
 group = "0.12.0"
 subtle = { version = "2.3", default-features = false }
 
