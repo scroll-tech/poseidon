@@ -1,5 +1,6 @@
+use halo2_proofs::halo2curves::FieldExt;
+
 use crate::{Spec, State};
-use halo2curves::FieldExt;
 
 /// Poseidon hasher that maintains state and inputs and yields single element
 /// output when desired
@@ -73,16 +74,15 @@ impl<F: FieldExt, const T: usize, const RATE: usize> Poseidon<F, T, RATE> {
 mod tests {
     use crate::{Poseidon, State};
     use group::ff::Field;
-    use halo2curves::bn256::Fr;
+    use halo2_proofs::halo2curves::bn256::Fr;
     use paste::paste;
     use rand_core::OsRng;
-
 
     const R_F: usize = 8;
     const R_P: usize = 57;
     const T: usize = 5;
     const RATE: usize = 4;
-    
+
     fn gen_random_vec(len: usize) -> Vec<Fr> {
         (0..len).map(|_| Fr::random(OsRng)).collect::<Vec<Fr>>()
     }
