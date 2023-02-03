@@ -1,7 +1,8 @@
 use std::ops::Index;
 
+use halo2_proofs::halo2curves::FieldExt;
+
 use crate::{grain::Grain, matrix::Matrix};
-use halo2curves::FieldExt;
 
 /// `State` is structure `T` sized field elements that are subjected to
 /// permutation
@@ -396,7 +397,8 @@ impl<F: FieldExt, const T: usize, const RATE: usize> Spec<F, T, RATE> {
 
 #[cfg(test)]
 pub(super) mod tests {
-    use halo2curves::FieldExt;
+
+    use halo2_proofs::halo2curves::FieldExt;
 
     use super::MDSMatrix;
     use crate::grain::Grain;
